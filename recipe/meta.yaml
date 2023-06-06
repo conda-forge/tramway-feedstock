@@ -10,13 +10,14 @@ source:
   sha256: 4c7aed80557ffd5c060bcb2c45ba197bad5ea633e9f3fc40ca7b6e92adb527c6
 
 build:
-  skip: true  # [py<39 or py>310]
+  skip: true  # [py<38 or py>310]
   number: 0
-  script: {{ PYTHON }} setup.py install
+  script: {{ PYTHON }} -m pip install --no-deps .
 
 requirements:
   host:
     - pip
+    - poetry
     - python
   run:
     - setuptools
