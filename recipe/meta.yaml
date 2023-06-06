@@ -22,7 +22,7 @@ requirements:
     - setuptools
     - hdf5
     - python
-    - rwa-python
+    - rwa-python=0.9.3
     - matplotlib-base
     - cvxopt
     - polytope
