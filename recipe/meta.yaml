@@ -12,12 +12,11 @@ source:
 build:
   skip: true  # [py<38 or py>310]
   number: 0
-  script: {{ PYTHON }} -m pip install --no-deps .
+  script: rm -f pyproject.toml; {{ PYTHON }} -m pip install --no-deps .
 
 requirements:
   host:
     - pip
-    - poetry
     - python
   run:
     - setuptools
