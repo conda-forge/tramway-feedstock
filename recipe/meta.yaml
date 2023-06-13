@@ -12,15 +12,23 @@ source:
 build:
   skip: true  # [py<38]
   number: 0
-  script: poetry env use {{ PYTHON }} && poetry install --all-extras
+  script: {{ PYTHON }} -m pip install --no-deps .
 
 requirements:
   host:
-    - poetry
+    - pip
     - python
   run:
+    - setuptools
     - hdf5
     - python
+    - rwa-python =0.9.3
+    - matplotlib-base
+    - cvxopt
+    - polytope
+    - tqdm
+    - scikit-image
+    - stopit  # [not win]
 
 test:
   imports:
