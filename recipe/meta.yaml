@@ -20,15 +20,16 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
-    - hdf5
-    - python >={{ python_min }}
-    - rwa-python =0.10
-    - matplotlib-base
     - cvxopt
+    - hdf5
+    - matplotlib-base
+    - multiprocess
+    - python >={{ python_min }}
     - polytope
-    - tqdm
+    - rwa-python =0.10
     - scikit-image
     - setuptools
+    - tqdm
 
 test:
   imports:
