@@ -1,6 +1,6 @@
 {% set name = "tramway" %}
 {% set version = "0.7" %}
-{% set python_min = "3.8" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name }}
@@ -22,7 +22,7 @@ requirements:
   run:
     - hdf5
     - python >={{ python_min }}
-    - rwa-python =0.9.5
+    - rwa-python =0.10
     - matplotlib-base
     - cvxopt
     - polytope
