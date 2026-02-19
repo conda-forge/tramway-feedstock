@@ -1,6 +1,6 @@
 {% set name = "tramway" %}
-{% set version = "0.6.9" %}
-{% set python_min = "3.8" %}
+{% set version = "0.7" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/DecBayComp/TRamWAy/archive/v{{ version }}.tar.gz
-  sha256: 420bacf86c55ad740e3d0348092e064c7797bbde749ac00ddc99a910131060a8
+  sha256: 574eb6c8cb6473cb7aa556a309ce7cc4975cebf59222b0db23683ede03cfdadd
 
 build:
   noarch: python
@@ -20,15 +20,16 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
-    - hdf5
-    - python >={{ python_min }}
-    - rwa-python =0.9.5
-    - matplotlib-base
     - cvxopt
+    - hdf5
+    - matplotlib-base
+    - multiprocess
+    - python >={{ python_min }}
     - polytope
-    - tqdm
+    - rwa-python =0.10
     - scikit-image
     - setuptools
+    - tqdm
 
 test:
   imports:
